@@ -138,3 +138,10 @@ def view_eval(history):
     plt.plot(history.history['val_accuracy'], label='Validation Accuracy')
     plt.legend(loc='lower right')
     plt.show()
+   
+if __name__ == "main":
+    train_set = load_train(folder_path)
+    test_set = load_test(folder_path)
+    model = build_model()
+    history = train_model(model,train_set,test_set)
+    view_eval(history)
